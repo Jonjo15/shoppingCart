@@ -1,0 +1,1 @@
+export const items = [{name: "Shirt", price: "220USD"}, {name: "Shorts", price:"100USD"}, {name: "Hat", price: "40USD"}, {name: "Adidas Continental", price:"120USD"} ]

@@ -20,6 +20,16 @@ code {
 .home {
   text-align: center;
 }
+.shoppingItems {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+.shopPage {
+  text-align: center;
+
+  padding-right: 5%;
+}
 .homeImg {
   max-width: 550px;
   max-height: 550px;
