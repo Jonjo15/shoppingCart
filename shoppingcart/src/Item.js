@@ -1,20 +1,28 @@
-import React, {useState} from "react"
+import React from "react"
 
 function Item(props) {
-    const [quantity, setQuantity] = useState(0)
+    // const [quantity, setQuantity] = useState(0)
     function handleIncreaseButton(e) {
+        let prevProducts = props.products.slice(0)
+        prevProducts[props.data.id].quantity += 1;
+        props.setProducts(prevProducts)
         props.setNumItems(props.numItems +1)
-        setQuantity(quantity + 1)
+        // setQuantity(quantity + 1)
     }
     function handleDecreaseButton(e) {
-        if (props.numItems > 0 && quantity > 0) {
+        if (props.numItems > 0 && props.data.quantity > 0) {
+            let prevProducts = props.products.slice(0)
+            prevProducts[props.data.id].quantity -= 1
+            props.setProducts(prevProducts)
             props.setNumItems(props.numItems - 1)
-            setQuantity(quantity - 1)
         } 
     }
     function handleChange(e) {
-        const prevQuantity = quantity
-        setQuantity(+e.target.value)
+        let prevProducts = props.products.slice(0)
+        const prevQuantity = props.data.quantity
+        prevProducts[props.data.id].quantity = +e.target.value
+        // const prevQuantity = quantity
+        // setQuantity(+e.target.value)
         
         const diff = +e.target.value - prevQuantity;
         props.setNumItems(props.numItems + diff)
@@ -27,7 +35,7 @@ function Item(props) {
              setQuantity(e.target.value)
              props.setNumItems(props.numItems )
      }}/> */}
-     <input value={quantity} type="number" min="0" onChange={handleChange}/>
+     <input value={props.data.quantity} type="number" min="0" onChange={handleChange}/>
         <button onClick={handleDecreaseButton}>-</button>
     </div>)
 }
