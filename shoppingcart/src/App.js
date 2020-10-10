@@ -11,7 +11,7 @@ function App() {
     <div className="App">
         
         <BrowserRouter>
-        <Nav />
+        <Nav numItems={numItems}/>
           <Switch>
             <Route exact path="/shop" render={() => <Shop products={products} setProducts={setProducts} numItems={numItems} setNumItems={setNumItems} />} />
             <Route exact path="/" component={Home} />

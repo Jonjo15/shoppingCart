@@ -7,7 +7,6 @@ function Shop(props) {
     return(<div className="shopPage">
         <div className="shoppingItems">{shoppingItems}</div>
         <Checkout numItems={props.numItems} data={props.products} />
-        <h3>{props.numItems}</h3>
     </div>)
 }
 
