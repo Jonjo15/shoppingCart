@@ -61,6 +61,7 @@ code {
   height: 100%;
   border-bottom: none;
   border-left: none;
+  border-right: none;
 }
 .shopPage {
   text-align: center;

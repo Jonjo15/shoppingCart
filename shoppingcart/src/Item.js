@@ -20,6 +20,11 @@ function Item(props) {
             props.setNumItems(props.numItems - 1)
         } 
     }
+    // useEffect(() => {
+    //     if(props.products.all(ele => ele.quantity === 0)) {
+
+    //     }
+    // }, [props.products])
     function handleChange(e) {
         if (e.target.value > 10) {
             alert("Must be less than 11")
